@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+/**
+ * @function: main
+ * @brief: Prints out sizes of different data types
+ * @return: 0
+ */
 int main()
 {
 	printf("Size of a char: %d byte(s)\n", (int)sizeof(char));
