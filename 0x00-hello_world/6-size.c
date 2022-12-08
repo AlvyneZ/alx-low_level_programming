@@ -1,8 +1,9 @@
 #include <stdio.h>
+
 /**
- *@function: main
- *@brief: Prints out sizes of different data types
- *@return: 0
+ * @function: main
+ * @brief: Prints out sizes of different data types
+ * @return: 0
  */
 int main(void)
 {
