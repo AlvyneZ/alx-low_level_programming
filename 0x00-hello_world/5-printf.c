@@ -1,9 +1,8 @@
 #include <stdio.h>
 
 /**
- * @function: main
- * @brief: Prints out specific output using prrintf
- * @return: 0
+ * main- Prints out specific output using prrintf
+ * Return: 0
  */
 int main(void)
 {
