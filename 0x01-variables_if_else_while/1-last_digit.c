@@ -9,11 +9,11 @@
 int main(void)
 {
 	int n;
+	int last_dig;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 
-	int last_dig;
 	last_dig = n % 10;
 	if (last_dig < 0)
 		last_dig *= -1;
