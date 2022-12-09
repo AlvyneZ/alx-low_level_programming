@@ -11,7 +11,8 @@ int main(void)
 	alph = 'a';
 	do {
 		if ((alph != 'q') && (alph != 'e'))
-			putchar(alph++);
+			putchar(alph);
+		alph++;
 	} while (alph <= 'z');
 	putchar('\n');
 	return (0);
