@@ -1,8 +1,8 @@
-#include <stdio.h>
+#include <unistd.h>
 
 /**
  * main- Prints out to std out and stderr
- * Return: 0
+ * Return: 1
  */
 int main(void)
 {
