@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * main- Prints out if random number is positive or negative
+ * main- Prints out details of the last digit of a number
  * Return: 0
  */
 int main(void)
@@ -15,6 +15,8 @@ int main(void)
 
 	int last_dig;
 	last_dig = n % 10;
+	if (last_dig < 0)
+		last_dig *= -1;
 
 	if (last_dig > 5)
 		printf("Last digit of %d is %d and is greater than 5\n", n, last_dig);
