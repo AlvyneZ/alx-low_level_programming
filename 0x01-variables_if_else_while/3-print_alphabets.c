@@ -13,7 +13,7 @@ int main(void)
 		putchar(alph++);
 		if (alph == ('z' + 1))
 			alph = 'A';
-	} while (alph != ('Z'+1));
+	} while (alph != ('Z' + 1));
 	putchar('\n');
 	return (0);
 }
