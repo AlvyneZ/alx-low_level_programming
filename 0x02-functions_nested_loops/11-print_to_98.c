@@ -33,8 +33,6 @@ void print_number(int n)
  */
 void print_to_98(int n)
 {
-	int value;
-
 	if (n >= 98)
 	{
 		for (; n >= 98; n--)
