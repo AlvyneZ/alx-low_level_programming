@@ -1,2 +1,2 @@
 int _putchar(char c);
-int print(char* str);
+int print(char *str);

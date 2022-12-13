@@ -12,9 +12,10 @@ int main(void)
 
 /**
  * print- A printf implementation that prints till '\0'
+ * @str: Pointer to input character array too be printed
  * Return: 0
  */
-int print(char* str)
+int print(char *str)
 {
 	while (*str != '\0')
 	{
