@@ -9,13 +9,18 @@ void print_number(int n)
 	int a;
 	int max;
 
+	if (n < 0)
+	{
+		_putchar('-');
+		n = -n;
+	}
 	a = 0;
 	for (max = 1000000000; max > 1; max /= 10)
 	{
 		if (n < max)
 		{
 			if (a)
-				_putchar(0);
+				_putchar('0');
 		}
 		else
 		{
