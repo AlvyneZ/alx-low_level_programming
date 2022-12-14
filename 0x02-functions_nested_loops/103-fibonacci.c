@@ -14,7 +14,7 @@ int main(void)
 	prev = 1;
 	cur = 2;
 	sum = 0;
-	while(cur < 4000000UL)
+	while (cur < 4000000UL)
 	{
 		if ((cur % 2) == 0)
 			sum += cur;
