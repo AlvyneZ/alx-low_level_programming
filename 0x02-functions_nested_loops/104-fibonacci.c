@@ -22,13 +22,20 @@ int main(void)
 	for (cnt = 1; cnt < 98; cnt++)
 	{
 		if (curXtra)
-			printf(", %d%lu", curXtra, cur);
+		{
+			printf(", %d%018lu", curXtra, cur);
+		}
 		else
+		{
 			printf(", %lu", cur);
+		}
 		tmp = prev + cur;
 		tmpXtra = prevXtra + curXtra;
-		if ((tmp < prev) || (tmp < cur))
-			tmpXtra++;
+		if (tmp >= 1000000000000000000UL)
+		{
+			tmpXtra += tmp / 1000000000000000000UL;
+			tmp = tmp % 1000000000000000000UL;
+		}
 		prev = cur;
 		prevXtra = curXtra;
 		cur = tmp;
