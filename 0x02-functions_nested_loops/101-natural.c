@@ -19,7 +19,7 @@ int main(void)
 		if (cur % 3)
 			sum += cur * 5;
 	}
-	printf("%d", sum);
+	printf("%d\n", sum);
 
 	return (0);
 }
