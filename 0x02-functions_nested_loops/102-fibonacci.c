@@ -7,16 +7,16 @@
 int main(void)
 {
 	int cnt;
-	int prev;
-	int cur;
-	int tmp;
+	unsigned long prev;
+	unsigned long cur;
+	unsigned long  tmp;
 
 	prev = 1;
-	printf("%d", prev);
+	printf("%lu", prev);
 	cur = 2;
 	for (cnt = 1; cnt < 50; cnt++)
 	{
-		printf(", %d", cur);
+		printf(", %lu", cur);
 		tmp = prev + cur;
 		prev = cur;
 		cur = tmp;
