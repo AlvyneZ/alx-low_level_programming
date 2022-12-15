@@ -10,11 +10,11 @@ void print_number(int n)
 	int zeros;
 
 	zeros = 0;
-    if (n < 0)
-    {
-        _putchar('-');
-        n = -n;
-    }
+	if (n < 0)
+	{
+		_putchar('-');
+		n = -n;
+	}
 	for (max = 1000000000; max >= 1; max /= 10)
 	{
 		if (max == 1)
