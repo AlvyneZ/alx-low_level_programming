@@ -10,7 +10,8 @@ void print_most_numbers(void)
 	alph = '0';
 	do {
 		if ((alph != '2') && (alph != '4'))
-			_putchar(alph++);
+			_putchar(alph);
+		alph++;
 	} while (alph <= '9');
 	_putchar('\n');
 }
