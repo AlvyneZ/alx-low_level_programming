@@ -12,6 +12,10 @@ void print_number_simple(int n)
 	zeros = 0;
 	for (max = 1000000000; max >= 1; max /= 10)
 	{
+		if (max == 1)
+		{
+			zeros = 1;
+		}
 		if (n < max)
 		{
 			if (zeros)
