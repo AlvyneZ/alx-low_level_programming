@@ -25,10 +25,7 @@ long biggest_prime(long n)
 			n /= i;
 		}
 	}
-	if (b == 0)
-	{
-		b = n;
-	}
+	b = n;
 	return (b);
 }
 
