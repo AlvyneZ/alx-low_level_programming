@@ -3,6 +3,7 @@
 
 int _putchar(char c);
 void print_number_simple(int n);
+int print(char *str);
 
 int _isupper(int c);
 int _isdigit(int c);
