@@ -70,19 +70,22 @@ int  main(void)
 	{
 		if (!(num % 15))
 		{
-			print("FizzBuzz ");
+			print("FizzBuzz");
 		}
 		else if (!(num % 3))
 		{
-			print("Fizz ");
+			print("Fizz");
 		}
 		else if (!(num % 5))
 		{
-			print("Buzz ");
+			print("Buzz");
 		}
 		else
 		{
 			print_number_simple(num);
+		}
+		if (num != 100)
+		{
 			_putchar(' ');
 		}
 	}
