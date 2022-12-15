@@ -13,24 +13,44 @@ void print_number(int n)
 	if (n < 0)
 	{
 		_putchar('-');
-		n = -n;
+		for (max = -1000000000; max <= -1; max /= 10)
+		{
+			if (max == -1)
+			{
+				zeros = 1;
+			}
+			if (n > max)
+			{
+				if (zeros)
+					_putchar('0');
+			}
+			else
+			{
+				zeros = 1;
+				_putchar('0' + (n / max));
+				n %= (-max);
+			}
+		}
 	}
-	for (max = 1000000000; max >= 1; max /= 10)
+	else
 	{
-		if (max == 1)
+		for (max = 1000000000; max >= 1; max /= 10)
 		{
-			zeros = 1;
-		}
-		if (n < max)
-		{
-			if (zeros)
-				_putchar('0');
-		}
-		else
-		{
-			zeros = 1;
-			_putchar('0' + (n / max));
-			n %= max;
+			if (max == 1)
+			{
+				zeros = 1;
+			}
+			if (n < max)
+			{
+				if (zeros)
+					_putchar('0');
+			}
+			else
+			{
+				zeros = 1;
+				_putchar('0' + (n / max));
+				n %= max;
+			}
 		}
 	}
 }
