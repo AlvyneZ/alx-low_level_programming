@@ -1,10 +1,11 @@
 #include "main.h"
 
 /**
- * print_number - Print a multiple digit number including negative sign
+ * print_negative - Print a negative multiple digit number
  * @n: Number to print
+ * Return: 1 if number is negative, 0 otherwise
  */
-void print_number(int n)
+int print_negative(int n)
 {
 	int max;
 	int zeros;
@@ -31,8 +32,22 @@ void print_number(int n)
 				n %= (-max);
 			}
 		}
+		return (1);
 	}
-	else
+	return (0);
+}
+
+/**
+ * print_number - Print a multiple digit number including negative sign
+ * @n: Number to print
+ */
+void print_number(int n)
+{
+	int max;
+	int zeros;
+
+	zeros = 0;
+	if (!(print_negative(n)))
 	{
 		for (max = 1000000000; max >= 1; max /= 10)
 		{
