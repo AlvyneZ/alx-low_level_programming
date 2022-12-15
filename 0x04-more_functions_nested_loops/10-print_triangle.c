@@ -4,7 +4,7 @@
  * print_triangle - Prints a triangle of specified length
  * @n: triangle side length
  */
-void print_square(int n)
+void print_triangle(int n)
 {
 	int indx;
 	int col;
