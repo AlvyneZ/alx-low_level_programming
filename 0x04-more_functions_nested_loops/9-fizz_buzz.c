@@ -59,7 +59,7 @@ void print_number_simple(int n)
 
 /**
  * main - Prints out numbers from 1 to 100 replacing multiples
- * 	of 3 with Fizz and multiples of 5 with Buzz
+ *  of 3 with Fizz and multiples of 5 with Buzz
  * Return: 0
  */
 int  main(void)
