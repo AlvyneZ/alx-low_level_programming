@@ -28,7 +28,10 @@ int _atoi(char *s)
 		{
 			start = 1;
 			ret *= 10;
-			ret += ((*s) - '0');
+			if (sign == 1)
+				ret += ((*s) - '0');
+			else
+				ret -= ((*s) - '0');
 		}
 		else if (start)
 		{
@@ -39,5 +42,5 @@ int _atoi(char *s)
 			sign *= -1;
 		}
 	}
-	return (ret * sign);
+	return (ret);
 }
