@@ -4,6 +4,7 @@
 int _putchar(char c);
 int print_negative(int n);
 void print_number(int n);
+int _isdigit(int c);
 
 void reset_to_98(int *n);
 void swap_int(int *a, int *b);
@@ -15,5 +16,6 @@ void puts2(char *str);
 void puts_half(char *str);
 void print_array(int *a, int n);
 char *_strcpy(char *dest, char *src);
+int _atoi(char *s);
 
 #endif /* MAIN_H */
