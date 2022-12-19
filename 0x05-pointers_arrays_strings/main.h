@@ -2,7 +2,8 @@
 #define MAIN_H
 
 int _putchar(char c);
-void print_number_simple(int n);
+int print_negative(int n);
+void print_number(int n);
 
 void reset_to_98(int *n);
 void swap_int(int *a, int *b);

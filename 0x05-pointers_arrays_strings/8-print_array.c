@@ -1,31 +1,71 @@
 #include "main.h"
 
 /**
- * print_number_simple - Print a multiple digit number
+ * print_negative - Print a negative multiple digit number
  * @n: Number to print
+ * Return: 1 if number is negative, 0 otherwise
  */
-void print_number_simple(int n)
+int print_negative(int n)
 {
 	int max;
 	int zeros;
 
 	zeros = 0;
-	for (max = 1000000000; max >= 1; max /= 10)
+	if (n < 0)
 	{
-		if (max == 1)
+		_putchar('-');
+		for (max = -1000000000; max <= -1; max /= 10)
 		{
-			zeros = 1;
+			if (max == -1)
+			{
+				zeros = 1;
+			}
+			if (n > max)
+			{
+				if (zeros)
+					_putchar('0');
+			}
+			else
+			{
+				zeros = 1;
+				_putchar('0' + (n / max));
+				n %= (-max);
+			}
 		}
-		if (n < max)
+		return (1);
+	}
+	return (0);
+}
+
+/**
+ * print_number - Print a multiple digit number including negative sign
+ * @n: Number to print
+ */
+void print_number(int n)
+{
+	int max;
+	int zeros;
+
+	zeros = 0;
+	if (!(print_negative(n)))
+	{
+		for (max = 1000000000; max >= 1; max /= 10)
 		{
-			if (zeros)
-				_putchar('0');
-		}
-		else
-		{
-			zeros = 1;
-			_putchar('0' + (n / max));
-			n %= max;
+			if (max == 1)
+			{
+				zeros = 1;
+			}
+			if (n < max)
+			{
+				if (zeros)
+					_putchar('0');
+			}
+			else
+			{
+				zeros = 1;
+				_putchar('0' + (n / max));
+				n %= max;
+			}
 		}
 	}
 }
@@ -39,12 +79,12 @@ void print_array(int *a, int n)
 {
 	int cnt;
 
-	print_number_simple(*a);
+	print_number(*a);
 	for (cnt = 1; cnt < n; cnt++)
 	{
 		_putchar(',');
 		_putchar(' ');
-		print_number_simple(*(a + cnt));
+		print_number(*(a + cnt));
 	}
 	_putchar('\n');
 }
