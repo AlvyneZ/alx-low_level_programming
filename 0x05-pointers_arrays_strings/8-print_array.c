@@ -79,7 +79,8 @@ void print_array(int *a, int n)
 {
 	int cnt;
 
-	print_number(*a);
+	if (n > 0)
+		print_number(*a);
 	for (cnt = 1; cnt < n; cnt++)
 	{
 		_putchar(',');
