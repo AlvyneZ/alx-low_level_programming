@@ -20,12 +20,15 @@ int _strlen(char *s)
  */
 void puts_half(char *str)
 {
-	int len, ind;
+	int ind;
 
-	len = _strlen(str) / 2;
-	for (ind = 0; ind < len; ind++)
+	ind = _strlen(str);
+	if (ind % 2)
+		ind--;
+	ind /= 2;
+	for (str += ind; str != '\0'; str++)
 	{
-		_putchar(*(str + ind));
+		_putchar(*str);
 	}
 	_putchar('\n');
 }
