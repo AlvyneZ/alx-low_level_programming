@@ -25,7 +25,7 @@ char *_strcat(char *dest, char *src)
 	char *destCurs, *srcCurs;
 	int len;
 
-	len = _strlen(src);
+	len = _strlen(dest);
 	srcCurs = src;
 	destCurs = dest + len;
 	for (; (*srcCurs != '\0'); srcCurs++, destCurs++)
