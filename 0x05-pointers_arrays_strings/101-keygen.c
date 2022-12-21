@@ -15,14 +15,14 @@ int main(void)
 	/* Use current time as seed for random generator */
 	srand(time(0));
 
-	len = rand() % 100;
+	/* Password length between 10 and 30 characters*/
+	len = (rand() % 20) + 10;
 	for (ind = 0; ind < len; ind++)
 	{
-		if ((rand() % 100) > 50)
-			c = 'a' + (rand() % 26);
-		else
-			c = 'A' + (rand() % 26);
+		c = '!' + (rand() % 95);
 		printf("%c", c);
 	}
+	printf("\n");
+	
 	return (0);
 }
