@@ -14,13 +14,16 @@ char *rot13(char *s)
 		if (((*sCurs >= 'n') && (*sCurs <= 'z')) ||
 		((*sCurs >= 'N') && (*sCurs <= 'Z')))
 		{
-			*sCurs -= 26;
+			*sCurs -= 13;
 		}
-		while (((*sCurs >= ('a' - 13)) && (*sCurs <= 'm')) ||
-		((*sCurs >= ('A' - 13)) && (*sCurs <= 'M')))
+		else
 		{
-			*sCurs += 13;
-			break;
+			while (((*sCurs >= 'a') && (*sCurs <= 'm')) ||
+			((*sCurs >= 'A') && (*sCurs <= 'M')))
+			{
+				*sCurs += 13;
+				break;
+			}
 		}
 	}
 	return (s);
