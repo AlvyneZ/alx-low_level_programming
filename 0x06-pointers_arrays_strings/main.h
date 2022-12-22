@@ -3,6 +3,7 @@
 
 int _putchar(char c);
 int _strlen(char *s);
+void rev_string(char *s);
 
 char *_strcat(char *dest, char *src);
 char *_strncat(char *dest, char *src, int n);
@@ -15,5 +16,6 @@ char *leet(char *);
 char *rot13(char *);
 void print_number(int n);
 int print_negative(int n);
+char *infinite_add(char *n1, char *n2, char *r, int size_r);
 
 #endif /* MAIN_H */
