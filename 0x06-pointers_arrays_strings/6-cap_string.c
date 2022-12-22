@@ -11,7 +11,7 @@ char *cap_string(char *s)
 	int start;
 
 	sCurs = s;
-	start = 0;
+	start = 1;
 	for (; (*sCurs != '\0'); sCurs++)
 	{
 		if ((*sCurs == ',') || (*sCurs == ';') || (*sCurs == '.') ||
