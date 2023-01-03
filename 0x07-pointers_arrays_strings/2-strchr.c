@@ -18,5 +18,7 @@ char *_strchr(char *s, char c)
 		if (*sCurs == c)
 			return (sCurs);
 	}
+	if (c == '\0')
+		return (sCurs);
 	return (NULL);
 }
