@@ -17,5 +17,5 @@ char *_strchr(char *s, char c)
 		if (*sCurs == c)
 			return sCurs;
 	}
-	return ((void *)0);
+	return (NULL);
 }
