@@ -10,14 +10,14 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
-	unsigned int curs2;
+	unsigned int curs;
 	char *sCurs;
 
 	for (sCurs = s; sCurs != '\0'; sCurs++)
 	{
-		for (curs2 = 0; accept[curs2] != '\0'; curs2++)
+		for (curs = 0; accept[curs] != '\0'; curs++)
 		{
-			if (sCurs == accept[curs2])
+			if (*sCurs == accept[curs])
 			{
 				return (sCurs);
 			}
