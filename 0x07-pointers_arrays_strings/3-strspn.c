@@ -16,8 +16,11 @@ unsigned int _strspn(char *s, char *accept)
 		found = 0;
 		for (curs2 = 0; accept[curs2] != '\0'; curs2++)
 		{
-			found = 1;
-			break;
+			if (s[curs] == accept[curs2])
+			{
+				found = 1;
+				break;
+			}
 		}
 		if (!found)
 			return (curs);
