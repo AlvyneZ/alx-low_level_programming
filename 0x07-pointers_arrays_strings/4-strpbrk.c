@@ -13,7 +13,7 @@ char *_strpbrk(char *s, char *accept)
 	unsigned int curs;
 	char *sCurs;
 
-	for (sCurs = s; sCurs != '\0'; sCurs++)
+	for (sCurs = s; *sCurs != '\0'; sCurs++)
 	{
 		for (curs = 0; accept[curs] != '\0'; curs++)
 		{
