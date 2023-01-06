@@ -25,7 +25,7 @@ int sqrt_approach(int n, int a)
 }
 
 /**
- * prime_chk_ov_five - Checks if a number is divisible by large primes
+ * prime_chk_large - Checks if a number is divisible by large primes
  * @n: Number whose divisibility is to be tested
  * @p: Prime to start from
  * @sqrt: approximate square-root of n to stop at
