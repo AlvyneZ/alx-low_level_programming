@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _sqrt_finder - Recursively 
+ * _sqrt_finder - Recursively converges square-root guesses
  * @n: Number to be square-rooted
  * @a: Guess of square-root
  * Return: Number closer to Square-root of n
@@ -32,5 +32,7 @@ int _sqrt_finder(int n, int a)
  */
 int _sqrt_recursion(int n)
 {
+	if (n < 0)
+		return (-1);
 	return (_sqrt_finder(n, n / 2));
 }
