@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * main- Multiplies 2 numbers given in command-line
@@ -8,7 +9,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int i, mul, a, b;
+	int mul, a, b;
 
 	if (argc < 3)
 		printf("Error\n");
