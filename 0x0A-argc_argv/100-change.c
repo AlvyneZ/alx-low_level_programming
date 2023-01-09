@@ -13,7 +13,6 @@ int main(int argc, char *argv[])
 {
 	const int coins[5] = {25, 10, 5, 2, 1};
 	int i, sum, a;
-	char *endptr;
 
 	if (argc != 2)
 	{
