@@ -10,15 +10,16 @@
 int main(int argc, char *argv[])
 {
 	int i, sum, a;
+	char *endptr;
 
 	sum = 0;
 	for (i = 1; i < argc; i++)
 	{
-		a = atoi(argv[i]);
-		if ((a == 0) && (argv[i] != "0"))
+		a = (int)strtol(argv[i], &endptr, 10);
+		if (*endptr != '\0')
 		{
 			printf("Error\n");
-			return(0);
+			return (0);
 		}
 		sum += a;
 	}
