@@ -20,12 +20,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (0);
 	}
-	a = (int)strtol(argv[1], &endptr, 10);
-	if (*endptr != '\0')
-	{
-		printf("Error\n");
-		return (0);
-	}
+	a = atoi(argv[1]);
 	sum = 0;
 	for (i = 0; i < 5; i++)
 	{
