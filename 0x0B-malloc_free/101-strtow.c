@@ -81,7 +81,7 @@ char **strtow(char *str)
 		w1 = w2;
 		w2 = _strchr(w1, ' ');
 	}
-	out = malloc(wCount + 1);
+	out = malloc((wCount + 1) * sizeof(char *));
 	if (out == NULL)
 		return (NULL);
 	out[wCount] = NULL;
