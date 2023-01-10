@@ -39,7 +39,7 @@ char *_strcpy(char *dest, char *src)
  * @s1: First String
  * @s2: Second String
  * Return: a pointer to the concatenated string, or NULL if
- *  it fails or provided strings are NULL
+ *  it fails
  */
 char *str_concat(char *s1, char *s2)
 {
@@ -53,8 +53,6 @@ char *str_concat(char *s1, char *s2)
 	if (s2 != NULL)
 		len = _strlen(s2);
 	len += l1 + 1;
-	if ((s2 == NULL) && (s2 == NULL))
-		return (NULL);
 	out = malloc(len);
 	if (out == NULL)
 		return (NULL);
