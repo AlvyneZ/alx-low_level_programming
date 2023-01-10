@@ -30,18 +30,29 @@ char *_memset(char *s, char b, unsigned int n)
  */
 int **alloc_grid(int width, int height)
 {
-	int **out, row, curs;
+	int **out, *row, ind, curs;
 
 	if ((width <= 0) || (height <= 0))
 		return (NULL);
-	out = malloc(sizeof(int) * width * height);
+	out = malloc(height * sizeof(int*));
 	if (out == NULL)
 		return (NULL);
-	for (row = 0; row < height; row++)
+	for (ind = 0; ind < height; ind++)
 	{
+		row = malloc(width * sizeof(int));
+		if (row == NULL)
+		{
+			while (ind > 0)
+			{
+				free(out[--ind]);
+			}
+			free(out);
+			return (NULL);
+		}
+		out[ind] = row;
 		for (curs = 0; curs < width; curs++)
 		{
-			out[row][curs] = 0;
+			row[curs] = 0;
 		}
 	}
 	return (out);
