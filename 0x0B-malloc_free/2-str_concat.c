@@ -61,6 +61,6 @@ char *str_concat(char *s1, char *s2)
 	if (s1 != NULL)
 		_strcpy(out, s1);
 	if (s2 != NULL)
-		_strcpy(&(out[l1]), s1);
+		_strcpy(&(out[l1]), s2);
 	return (out);
 }
