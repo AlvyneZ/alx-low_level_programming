@@ -79,7 +79,7 @@ char **strtow(char *str)
 		if ((w2 - w1) > 1)
 			wCount++;
 		w1 = w2;
-		w2 = _strchr(w1, ' ');
+		w2 = _strchr((w1 + 1), ' ');
 	}
 	out = malloc((wCount + 1) * sizeof(char *));
 	if (out == NULL)
@@ -100,10 +100,10 @@ char **strtow(char *str)
 			}
 			out[ind] = w1;
 			ind++;
-			_strncpy(w1, (w2 - len - 1), (len - 1));
+			_strncpy(w1, (w2 - len + 1), (len - 1));
 		}
 		w1 = w2;
-		w2 = _strchr(w1, ' ');
+		w2 = _strchr((w1 + 1), ' ');
 	}
 	return (out);
 }
