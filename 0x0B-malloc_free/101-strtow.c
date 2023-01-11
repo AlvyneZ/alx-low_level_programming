@@ -86,13 +86,13 @@ char **strtow(char *str)
 	out[wCount] = NULL;
 	for (ind = 0, w2 = str; ((w2 != NULL) && (ind < wCount));)
 	{
-		w1 = w2;
-		w2 = _strchr((w1 + 1), ' ');
+		w1 = (w2 == str) ? w2 : w2 + 1;
+		w2 = _strchr((w1), ' ');
 		len = (w2 == NULL) ? _strlen(w1) : w2 - w1;
-		w2 = (w2 == NULL) ? w1 + len : w2;
-		if (len > 1)
+		if (len > 0)
 		{
-			w1 = malloc(len);
+			w2 = w1;
+			w1 = malloc(len + 1);
 			if (w1 == NULL)
 			{
 				while (ind > 0)
@@ -100,9 +100,9 @@ char **strtow(char *str)
 				free(out);
 				return (NULL);
 			}
-			out[ind] = w1;
-			ind++;
-			_strncpy(w1, (w2 - len + 1), (len - 1));
+			out[ind++] = w1;
+			_strncpy(w1, w2, len);
+			w2 += len;
 		}
 	}
 	return (out);
