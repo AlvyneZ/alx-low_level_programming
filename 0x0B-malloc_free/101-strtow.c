@@ -71,23 +71,25 @@ char **strtow(char *str)
 
 	if ((str == NULL) || (_strlen(str) == 0))
 		return (NULL);
-	w1 = str;
-	w2 = str;
-	wCount = 1;
-	while (w2 != NULL)
+	for (wCount = 0, w2 = str; w2 != NULL;)
 	{
-		if ((w2 - w1) > 1)
-			wCount++;
 		w1 = w2;
 		w2 = _strchr((w1 + 1), ' ');
+		if (((w2 == NULL) && (w1[1] != '\0')) || ((w2 - w1) > 1))
+			wCount++;
 	}
+	if (wCount == 0)
+		return (NULL);
 	out = malloc((wCount + 1) * sizeof(char *));
 	if (out == NULL)
 		return (NULL);
 	out[wCount] = NULL;
-	for (ind = 0, w1 = str, w2 = str; w2 != NULL;)
+	for (ind = 0, w2 = str; ((w2 != NULL) && (ind < wCount));)
 	{
-		len = w2 - w1;
+		w1 = w2;
+		w2 = _strchr((w1 + 1), ' ');
+		len = (w2 == NULL) ? _strlen(w1) : w2 - w1;
+		w2 = (w2 == NULL) ? w1 + len : w2;
 		if (len > 1)
 		{
 			w1 = malloc(len);
@@ -102,8 +104,6 @@ char **strtow(char *str)
 			ind++;
 			_strncpy(w1, (w2 - len + 1), (len - 1));
 		}
-		w1 = w2;
-		w2 = _strchr((w1 + 1), ' ');
 	}
 	return (out);
 }
