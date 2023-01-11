@@ -73,9 +73,9 @@ char **strtow(char *str)
 		return (NULL);
 	for (wCount = 0, w2 = str; w2 != NULL;)
 	{
-		w1 = w2;
-		w2 = _strchr((w1 + 1), ' ');
-		if (((w2 == NULL) && (w1[1] != '\0')) || ((w2 - w1) > 1))
+		w1 = (*w2 == ' ') ? w2 + 1 : w2;
+		w2 = _strchr(w1, ' ');
+		if (((w2 == NULL) ? _strlen(w1) : w2 - w1) > 0)
 			wCount++;
 	}
 	if (wCount == 0)
@@ -86,7 +86,7 @@ char **strtow(char *str)
 	out[wCount] = NULL;
 	for (ind = 0, w2 = str; ((w2 != NULL) && (ind < wCount));)
 	{
-		w1 = (w2 == str) ? w2 : w2 + 1;
+		w1 = (*w2 == ' ') ? w2 + 1 : w2;
 		w2 = _strchr((w1), ' ');
 		len = (w2 == NULL) ? _strlen(w1) : w2 - w1;
 		if (len > 0)
