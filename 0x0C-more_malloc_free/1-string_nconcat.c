@@ -70,8 +70,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	l1 = 0;
 	len = 0;
-	if ((s1 == NULL) && (s2 == NULL))
-		return (NULL);
 	if (s1 != NULL)
 		l1 = _strlen(s1);
 	if (s2 != NULL)
@@ -91,5 +89,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		else
 			_strcpy(&(out[l1]), s2);
 	}
+	out[len] = '\0';
 	return (out);
 }
