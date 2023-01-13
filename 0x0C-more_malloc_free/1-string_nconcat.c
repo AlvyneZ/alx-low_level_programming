@@ -66,7 +66,7 @@ char *_strncpy(char *dest, char *src, int n)
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *out;
-	int len, l1;
+	unsigned int len, l1;
 
 	l1 = 0;
 	len = 0;
