@@ -11,7 +11,7 @@
  */
 int *array_range(int min, int max)
 {
-	void *mem;
+	int *mem;
 	int *curs;
 
 	if (min > max)
@@ -19,7 +19,7 @@ int *array_range(int min, int max)
 	mem = malloc(max + 1 - min);
 	if (mem == NULL)
 		return (NULL);
-	for (curs = (int *)mem; min <= max; curs++)
+	for (curs = mem; min <= max; curs++)
 	{
 		*curs = min++;
 	}
