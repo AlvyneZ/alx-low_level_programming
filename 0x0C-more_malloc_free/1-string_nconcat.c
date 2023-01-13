@@ -66,7 +66,7 @@ char *_strncpy(char *dest, char *src, int n)
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *out;
-	unsigned int len, l1;
+	unsigned int len, l1, ind;
 
 	l1 = 0;
 	len = 0;
@@ -86,10 +86,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		_strcpy(out, s1);
 	if (s2 != NULL)
 	{
-		if (len < n + l1 + 1)
-			_strcpy(&(out[l1]), s2);
-		else
-			_strncpy(&(out[l1]), s2, n);
+		ind = 0;
+		for (; ((s2[ind] != '\0') && (ind < n)); ind++)
+			out[l1 + ind] = s2[ind];
+		out[l1 + ind] = '\0';
 	}
 	return (out);
 }
