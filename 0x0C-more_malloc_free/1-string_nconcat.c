@@ -83,6 +83,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (s1 != NULL)
 		_strcpy(out, s1);
 	if (s2 != NULL)
-		_strncpy(&(out[l1]), s2, n);
+	{
+		if (len == n + l1 + 1)
+			_strncpy(&(out[l1]), s2, n);
+		else
+			_strcpy(&(out[l1]), s2);
+	}
 	return (out);
 }
