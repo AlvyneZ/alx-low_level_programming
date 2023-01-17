@@ -11,6 +11,8 @@
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
+	if (d == NULL)
+		return;
 	memset(d, 0, sizeof(struct dog));
 	d->name = name;
 	d->age = age;
