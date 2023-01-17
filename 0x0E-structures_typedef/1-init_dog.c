@@ -1,4 +1,5 @@
 #include "dog.h"
+#include <string.h>
 
 /**
  * init_dog - Initializes a dog structure with
@@ -10,6 +11,7 @@
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
+	memset(d, 0, sizeof(struct dog));
 	d->name = name;
 	d->age = age;
 	d->owner = owner;
