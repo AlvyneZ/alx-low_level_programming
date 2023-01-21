@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 /**
  * main- Prints a specified number of bytes of the
@@ -27,7 +26,7 @@ int main(int argc, char *argv[])
 		exit(2);
 	}
 
-	for (i = 4; i < (a + 3); i++)
+	for (i = 0; i < (a -1); i++)
 	{
 		printf("%02x ", ((unsigned char *)main)[i]);
 	}
