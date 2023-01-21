@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 		exit(2);
 	}
 
-	for (i = 0; i < (a -1); i++)
+	for (i = 0; i < (a - 1); i++)
 	{
 		printf("%02x ", ((unsigned char *)main)[i]);
 	}
