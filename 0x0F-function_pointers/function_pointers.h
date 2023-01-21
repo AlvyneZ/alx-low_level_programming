@@ -1,6 +1,8 @@
 #ifndef FUNC_PTRS_HEADER
 #define FUNC_PTRS_HEADER
 
+#include <stddef.h>
+
 int _putchar(char c);
 
 void print_name(char *name, void (*f)(char *));
