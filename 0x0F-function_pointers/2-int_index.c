@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * array_iterator - Repeatedly runs a compare function on
+ * int_index - Repeatedly runs a compare function on
  *  elements of an array to find an element
  * @array: Array whose elements are the subject of
  *  the given action
