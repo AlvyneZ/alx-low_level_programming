@@ -1,5 +1,5 @@
 #include "function_pointers.h"
-#include <stdio.h>
+#include <stdlib.h>
 
 /**
 * _puts - Prints a string
@@ -19,6 +19,6 @@ void _puts(char *s)
  */
 void print_name(char *name, void (*f)(char *))
 {
-	_puts("Hello, my name is ");
-	(*f)(name);
+	if (name != NULL)
+		(*f)(name);
 }
