@@ -1,6 +1,7 @@
 #include "3-calc.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * main- Performs the calculation given as a
@@ -12,22 +13,14 @@
 int main(int argc, char *argv[])
 {
 	int a, b;
-	char *endptr1, *endptr2;
 	int (*f)(int, int);
 
 	if (argc != 4)
 	{
 		printf("Error\n");
-		return (0);
+		exit(98);
 	}
 
-	strtol(argv[1], &endptr1, 10);
-	strtol(argv[3], &endptr2, 10);
-	if ((*endptr1 != '\0') || (*endptr2 != '\0'))
-	{
-		printf("Error\n");
-		return (0);
-	}
 	a = atoi(argv[1]);
 	b = atoi(argv[3]);
 
@@ -35,7 +28,14 @@ int main(int argc, char *argv[])
 	if (f == NULL)
 	{
 		printf("Error\n");
-		return (0);
+		exit(99);
+	}
+
+	if (((strcmp(argv[2], "/") == 0) ||
+		(strcmp(argv[2], "&") == 0)) && (b == 0))
+	{
+		printf("Error\n");
+		exit(100);
 	}
 
 	printf("%d\n", (f(a, b)));
