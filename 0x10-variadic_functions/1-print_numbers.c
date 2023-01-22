@@ -10,7 +10,7 @@
  */
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
-	int i;
+	unsigned int i;
 	va_list var;
 
 	if (n == 0)
@@ -25,7 +25,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		if (i == n)
 			printf("\n");
 		else if (separator != NULL)
-			printf(separator);
+			printf("%s", separator);
 	}
 	va_end(var);
 }
