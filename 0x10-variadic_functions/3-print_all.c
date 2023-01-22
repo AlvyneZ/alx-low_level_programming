@@ -43,7 +43,12 @@ void print_str(va_list *var)
 	char *str, *nil = "(nil)";
 
 	str = va_arg(*var, char *);
-	printf("%s", (str == NULL) ? nil : str);
+	if (str == NULL)
+	{
+		printf("%s", nil);
+		return;
+	}
+	printf("%s", str);
 }
 
 /**
@@ -54,6 +59,7 @@ void print_str(va_list *var)
 void print_all(const char * const format, ...)
 {
 	unsigned int i, j;
+	char *sep;
 	va_list var;
 	format_spec_t form[] = {
 		{'c', &print_char},
@@ -64,6 +70,7 @@ void print_all(const char * const format, ...)
 
 	va_start(var, format);
 	i = 0;
+	sep = "";
 	while ((format != NULL) && (format[i] != '\0'))
 	{
 		j = 0;
@@ -71,8 +78,9 @@ void print_all(const char * const format, ...)
 		{
 			if (format[i] == form[j].spec)
 			{
+				printf("%s", sep);
+				sep = ", ";
 				form[j].print_func(&var);
-				printf(", ");
 			}
 			j++;
 		}
