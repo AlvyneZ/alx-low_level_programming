@@ -1,5 +1,6 @@
-#include <unistd.h>
 #include <stdio.h>
+
+void constructor_func(void) __attribute__((constructor));
 
 /**
  * constructor_func - Prints some text before main runs
