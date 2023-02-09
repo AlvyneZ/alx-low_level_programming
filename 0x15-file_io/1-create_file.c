@@ -35,9 +35,12 @@ int create_file(const char *filename, char *text_content)
 		len = 0;
 	else
 		len = _strlen(text_content);
-	wrcnt = write(filde, text_content, len);
-	close(filde);
-	if (wrcnt != len)
-		return (-1);
+	if (len)
+	{
+		wrcnt = write(filde, text_content, len);
+		close(filde);
+		if (wrcnt != len)
+			return (-1);
+	}
 	return (1);
 }
