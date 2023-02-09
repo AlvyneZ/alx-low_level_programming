@@ -61,8 +61,8 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	src = argv[0];
-	dest = argv[1];
+	src = argv[1];
+	dest = argv[2];
 	src_filde = open(src, O_RDONLY);
 	if (src_filde < 0)
 	{
