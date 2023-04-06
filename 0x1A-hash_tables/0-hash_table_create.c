@@ -5,7 +5,7 @@
  * hash_table_create - Allocates space in the heap for a new
  *  hash table of specified size
  *
- * @size: Number of nodes the hash table is to have
+ * @size: Number of nodes the hash table array is to have
  * Return: A pointer to the newly created hash table,
  *  or NULL if something went wrong
  */
