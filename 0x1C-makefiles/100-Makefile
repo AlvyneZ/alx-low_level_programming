@@ -1,7 +1,7 @@
 # Useful Makefile to compile school.c into a named executable
 #  while using variables and multiple targets
 # Having targets for cleanup
-.phony: all clean oclean fclean re
+.PHONY: all clean oclean fclean re
 
 # Compiler to be used
 CC=gcc
