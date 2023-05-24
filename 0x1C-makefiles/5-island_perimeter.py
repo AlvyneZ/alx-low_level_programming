@@ -4,6 +4,7 @@ This "5-island_perimeter.py" module exports one function:
  island_perimeter - calculates the perimeter of an island in a grid.
 """
 
+
 def island_perimeter(grid):
     """Function to calculate the perimeter of an island in a grid.
 
