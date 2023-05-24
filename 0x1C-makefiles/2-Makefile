@@ -1,0 +1,20 @@
+# Useful Makefile to compile school.c into a named executable
+#  while using variables and multiple targets
+
+# Compiler to be used
+CC=gcc
+
+# Source files to be compiled
+SRC=main.c school.c
+
+# Object files to be linked into the final executable
+OBJ=main.o school.o
+
+# Name of the final executable
+NAME=school
+
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+%.o: %.c
+	$(CC) -c -o $@ $<
