@@ -8,12 +8,12 @@ CC=gcc
 SRC=main.c school.c
 
 # Object files to be linked into the final executable
-OBJ=main.o school.o
+OBJ=$(patsubst %.c,%.o,$(SRC))
 
 # Name of the final executable
 NAME=school
 
-all: $(SRC) $(OBJ)
+all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
 %.o: %.c
