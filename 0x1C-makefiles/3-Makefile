@@ -1,0 +1,41 @@
+# Useful Makefile to compile school.c into a named executable
+#  while using variables and multiple targets
+# Having targets for cleanup
+
+# Compiler to be used
+CC=gcc
+
+# Source files to be compiled
+SRC=main.c school.c
+
+# Object files to be linked into the final executable
+OBJ=$(patsubst %.c,%.o,$(SRC))
+
+# Name of the final executable
+NAME=school
+
+# The program used to delete files
+RM=rm -f
+
+# Target that builds the executable
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+%.o: %.c
+	$(CC)    -c -o $@ $<
+
+# Target that deletes all Emacs and Vim temporary files along with
+#  the executable
+clean:
+	$(RM) *~ school
+
+# Target that deletes all object files
+oclean:
+	$(RM) $(OBJ)
+
+# Target that deletes all Emacs and Vim temporary files, the executable,
+#  and the object files
+fclean: clean oclean
+
+# Target that forces recompilation of all source files
+re: oclean all
