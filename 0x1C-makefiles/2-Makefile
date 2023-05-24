@@ -13,7 +13,7 @@ OBJ=main.o school.o
 # Name of the final executable
 NAME=school
 
-all: $(OBJ)
+all: $(SRC) $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
 %.o: %.c
