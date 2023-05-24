@@ -15,17 +15,21 @@ def island_perimeter(grid):
     """
     per = 0
     for row in grid:
-        cur = row[0]
+        cur = 0
         for it in row:
             if it != cur:
                 per += 1
                 cur = it
+        if cur == 1:
+            per += 1
     for colno in range(len(grid[0])):
-        cur = grid[0][colno]
+        cur = 0
         for rowno in range(len(grid)):
             if grid[rowno][colno] != cur:
                 per += 1
                 cur = grid[rowno][colno]
+        if cur == 1:
+            per += 1
     return per
 
 
