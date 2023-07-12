@@ -39,7 +39,7 @@ int binary_search(int *array, size_t size, int value)
 
 	if ((size < 1) || (array == NULL))
 		return (-1);
-	for (i = 0, s_size = size; s_size > 0; i++)
+	for (i = 0, s_size = size; s_size > 0;)
 	{
 		#if (PRINT_AT_COMPARISON == 1)
 		printf("Searching in array: ");
@@ -53,13 +53,13 @@ int binary_search(int *array, size_t size, int value)
 		if (s_size % 2)
 		{
 			s_size = temp;
-			if (array[temp + i] > value)
+			if (array[temp + i] < value)
 				i += temp + 1;
 		}
 		else
 		{
 			s_size = temp;
-			if (array[temp + i] > value)
+			if (array[temp + i] < value)
 			{
 				s_size++;
 				i += temp + 1;
