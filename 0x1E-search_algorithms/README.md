@@ -35,3 +35,5 @@ int **allocate_map(int n, int m)
      return (map);
 }
 ```
+6. __107-0__ - time complexity (average case) of a jump search in a singly linked list of size n, using step = sqrt(n)
+7. __108-O__ - time complexity (average case) of a jump search in a skip list of size n, with an express lane using step = sqrt(n)
